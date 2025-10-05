@@ -1,13 +1,13 @@
-FROM node:slim
+FROM node:alpine3.20
 
-WORKDIR /app
+WORKDIR /tmp
 
-COPY index.js package.json ./
+COPY app.js package.json ./
 
-EXPOSE 3000
+EXPOSE 7860/tcp
 
-RUN apt update -y &&\
-    chmod +x index.js &&\
-    npm install 
-    
-CMD ["node", "index.js"]
+RUN apk add --no-cache curl bash && \
+    npm install && \
+    chmod +x app.js
+
+CMD ["npm", "start"]
