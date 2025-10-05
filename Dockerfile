@@ -2,7 +2,7 @@ FROM node:slim
 
 WORKDIR /app
 
-COPY . .
+COPY index.js package.json ./
 
 EXPOSE 3000
 
