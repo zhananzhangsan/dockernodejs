@@ -568,7 +568,7 @@ function cleanFiles() {
     }
   }, 90000); // 90s
 }
-cleanFiles();
+//cleanFiles();
 
 // 自动访问项目URL
 async function AddVisitTask() {
